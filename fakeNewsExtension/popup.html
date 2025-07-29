@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html translate="no" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Fake News Scan</title>
+  <style>
+    body {
+      margin: 0; height: 100vh;
+      background: linear-gradient(135deg, #000, #6a0dad);
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      font-family: sans-serif;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-width: 360px;
+      min-height: 480px;
+      box-sizing: border-box;
+    }
+    .scan-button {
+      background: linear-gradient(135deg, #2ecc71, #006400);
+      color: white; border: none; border-radius: 50%;
+      width: 130px; height: 130px;
+      font-size: 1.25rem; font-weight: bold;
+      cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      transition: all .3s ease;
+    }
+    .scan-button:hover {
+      transform: scale(1.1);
+    }
+    .scan-button:active {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    }
+    .card {
+      background: #fff; color: #333;
+      padding: 20px 30px; margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .6s ease,
+                  transform .6s ease;
+      display: flex; flex-direction: column;
+      gap: 10px; text-align: center;
+    }
+    .card.show {
+      opacity: 1; transform: translateY(0);
+    }
+    .value { font-size: 1.2rem; font-weight: bold; }
+    footer {
+      position: fixed; bottom: 0; width: 100%;
+      color: white; background: black;
+      font-size: 14px; text-align: center;
+      padding: 4px 0;
+    }
+  </style>
+</head>
+<body>
+  <button class="scan-button">Scan</button>
+
+  <div id="resultCard" class="card">
+    <div id="nbRes" class="value">Naive Bayes: …</div>
+    <div id="svmRes" class="value">SVM: …</div>
+    <div id="xgbRes" class="value">XGBoost: …</div>
+    <u><div id="majRes" class="value">Majority: …</div></u>
+  </div>
+
+  <footer>&copy; <span id="year"></span> Ayaan Raza</footer>
+
+  <script type="module" src="popup.js"></script>
+ 
+</body>
+</html>
