@@ -1,0 +1,11 @@
+Instructions to download extension
+
+Download repo as zip
+
+Extract and remove the extension folder
+
+Go to chrome://extensions and toggle developer mode
+
+Click load unpacked and select folder
+
+Extension should appear
